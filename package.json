@@ -20,16 +20,19 @@
     "pretest": "./scripts/prepare-test.sh",
     "test": "istanbul cover _mocha -- test/node test/template && mocha test/inception/test-inception.js -ig protractor --no-insight",
     "update-shrinkwrap": "./scripts/update-test-shrinkwrap.sh",
-    "deploy": "./scripts/deploy-boilerplate.sh"
+    "deploy": "./scripts/deploy-boilerplate.sh",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "chalk": "~1.1.1",
-    "insight": "~0.7.0",
-    "lodash": "~3.10.1",
+    "insight": "~0.9.0",
+    "lodash": "~4.17.11",
     "slash": "~1.0.0",
-    "underscore.string": "~3.2.2",
-    "yeoman-generator": "~0.20.3",
-    "yosay": "~1.0.5"
+    "underscore.string": "~3.3.5",
+    "yeoman-generator": "~2.0.5",
+    "yosay": "~1.0.5",
+    "snyk": "^1.163.3"
   },
   "devDependencies": {
     "bluebird": "~2.10.2",
@@ -52,5 +55,6 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "snyk": true
 }
